@@ -3,10 +3,14 @@ import { notFound } from "next/navigation";
 import { db } from "@/db";
 import * as actions from "@/actions";
 
+// interface SnippetShowPageProps {
+//   params: {
+//     id: string;
+//   };
+// }
+
 interface SnippetShowPageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 export default async function SnippetShowPage(props: SnippetShowPageProps) {
@@ -45,4 +49,11 @@ export default async function SnippetShowPage(props: SnippetShowPageProps) {
       </pre>
     </div>
   );
+}
+
+export async function generateStaticParams() {
+  const snippets = await db.snippet.findMany();
+  return snippets.map((snippet) => ({
+    id: snippet.id.toString(),
+  }));
 }
