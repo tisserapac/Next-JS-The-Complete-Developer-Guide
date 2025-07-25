@@ -16,7 +16,7 @@ export default async function PostShow({ postId }: PostShowProps) {
     notFound();
   }
 
-  console.log(post);
+  // console.log(post);
 
   return (
     <div className="m-4">

@@ -18,11 +18,12 @@ export default async function PostShowPage({ params }: PostShowPageProps) {
   return (
     <div className="space-y-3">
       <Link className="underline decoration-solid" href={paths.topicShow(slug)}>
-        {"< "}Back to {slug}
+        Back to {slug}
       </Link>
       <PostShow postId={postId} />
       <CommentCreateForm postId={postId} startOpen />
-      <CommentList fetchData={() => fetchCommentsByPostId(postId)} />
+      {/* <CommentList fetchData={() => fetchCommentsByPostId(postId)} /> */}
+      <CommentList postId={postId} />
     </div>
   );
 }
