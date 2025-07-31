@@ -1,6 +1,6 @@
 "use client";
 
-import { form, Input } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
 import { useSearchParams } from "next/navigation";
 import * as actions from "@/actions";
 

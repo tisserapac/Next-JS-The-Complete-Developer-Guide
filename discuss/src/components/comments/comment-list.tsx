@@ -1,4 +1,4 @@
-import { CommentWithAuthor } from "@/db/queries/comments";
+// import { CommentWithAuthor } from "@/db/queries/comments";
 import CommentShow from "@/components/comments/comment-show";
 import { fetchCommentsByPostId } from "@/db/queries/comments";
 
